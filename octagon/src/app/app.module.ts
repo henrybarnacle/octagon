@@ -7,6 +7,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 //create routes
 const appRoutes: Routes = [
@@ -20,9 +21,9 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    ComponentsComponent,
     HomeComponent,
     ContactComponent,
+    NavbarComponent,
  
   
   ],
