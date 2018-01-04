@@ -1,0 +1,45 @@
+.text1 {
+	padding-bottom: 40px;
+	margin-bottom:20px;
+	font-size: 16px;
+	
+}
+.text2 {
+	padding-bottom: 40px;
+	margin-bottom:20px;
+	font-size: 16px;
+
+}
+.gg {
+	padding-top: 40px;
+}
+.hero {
+	position: relative;
+	width: 100%;
+	padding-bottom: 30px;
+}
+.hero > img {
+	width: 100%;
+}
+.lead {
+	left: 0;
+    position:absolute;
+    text-align:center;
+    top: 30%;
+    width: 100%;
+    font-size: 40px;
+    color: #fff
+}
+@media (max-width: 700px) {
+	.lead{
+		font-size: 30px;
+	}
+}
+@media (max-width: 550px) {
+	.lead{
+		font-size: 20px;
+	}
+	.text1, .text2 {
+		font-size: 13px;
+	}
+}

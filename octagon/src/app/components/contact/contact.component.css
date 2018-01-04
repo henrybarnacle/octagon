@@ -11,6 +11,9 @@
   max-width: 400px;
   margin: 10px auto;
   background: #F7F7F7;
+  position: relative;
+  margin-bottom: 100px;
+
 }
 .form-style-6 h1 {
   background: #e6e6e6;

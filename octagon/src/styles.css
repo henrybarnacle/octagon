@@ -14,16 +14,18 @@ margin-bottom: 60px;
 }
 @media (max-width: 766px) {
   body {
-    padding-top: 160px;
+    padding-top: 130px;
   }
 }
 
 footer {
   position: absolute;
+  margin-top: 30px;
+  padding-top: 30px;
   bottom: 0;
   width: 100%;
-  /* Set the fixed height of the footer here */
-  height: 60px;
   margin-left: -15px;
+  /* Set the fixed height of the footer here */
+  height: 80px;
   background-color: #212121;
 }
