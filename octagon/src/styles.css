@@ -25,7 +25,27 @@ footer {
   bottom: 0;
   width: 100%;
   margin-left: -15px;
-  /* Set the fixed height of the footer here */
   height: 80px;
   background-color: #212121;
+  	text-align: center;
+    float: none;
+    top: auto;
+    right:auto;
+    width: 100%;
+    line-height: auto;
+}
+@media (max-height: 700px) {
+	.form-style-6 {
+		position: absolute;
+
+	}
+}
+
+.footer-link {
+	padding-left: 10px;
+	padding-right: 10px;
+    display: inline-block;
+    float:none;
+    top: 50%;
+	transform: translateY(-50%);
 }

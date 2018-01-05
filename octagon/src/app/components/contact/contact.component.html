@@ -1,10 +1,13 @@
 
 
 <!--form method="post" name="myemailform" action="../scripts/form_to_email.php"-->
-<div class="container">
-<h3>CONTACT US</h3>
-<form #contactForm ="ngForm" method="post" name="myemailform" action="scripts/form_to_email.php">
 
+<div class="container-fluid">
+
+
+<form class="form-style-6" #contactForm ="ngForm" method="post" name="myemailform" action="scripts/form_to_email.php">
+<h3>CONTACT US</h3>
+<hr>
       <div class="form-group">
         <label for="firstName">First Name</label>
         <input type="text" class="form-control" id="firstName" [(ngModel)]="model.firstName" name="firstName" [ngClass]="{'is-invalid':firstName.errors?.required && firstName.touched || firstName.errors?.minlength || firstName.errors?.pattern}"
@@ -79,12 +82,24 @@
 
  </form>
 
-</div>
-    <footer>
-      <div class="container">
-        <p class="text-muted">Place sticky footer content here.</p>
-      </div>
-    </footer>
 
+
+
+    <footer>
+     
+        <p class="text-muted">Octagon 2018</p>
+       
+        		<a class="footer-link" href=''>ABOUT US</a>
+        	
+        	
+        		<a class="footer-link" href=''>PROJECTS</a>
+        
+        	
+        		<a class="footer-link" href=''>GALLERY</a>
+        	
+       
+     
+    </footer>
+</div>
 
 
