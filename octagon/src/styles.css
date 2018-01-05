@@ -24,14 +24,14 @@ footer {
   padding-top: 30px;
   bottom: 0;
   width: 100%;
-  margin-left: -15px;
+
   height: 80px;
   background-color: #212121;
   	text-align: center;
     float: none;
     top: auto;
     right:auto;
-    width: 100%;
+   
     line-height: auto;
 }
 @media (max-height: 700px) {
