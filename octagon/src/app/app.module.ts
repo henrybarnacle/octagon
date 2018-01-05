@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FlashMessagesModule } from 'angular2-flash-messages';
+
 
 
 
@@ -28,11 +30,12 @@ const appRoutes: Routes = [
  
   
   ],
+
   imports: [
     BrowserModule,
     FormsModule,
+    FlashMessagesModule.forRoot(),
     RouterModule.forRoot(appRoutes),
-    
     ReactiveFormsModule
 
   ],

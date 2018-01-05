@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FlashMessagesService } from 'angular2-flash-messages';
+
 
 import { Client } from '../../client';
 
@@ -74,11 +76,29 @@ usStates = ["Alaska",
                 }
 
 
-  constructor(
+  constructor(private flashMessagesService: FlashMessagesService
 
   		) { }
 
   ngOnInit() {
   }
+
+   onSubmit({value, valid}: {value: Client, valid: boolean}){
+
+    if(!valid){
+      this.flashMessagesService.show('Please fill in all fields', {
+        cssClass:'alert-danger', timeout: 4000
+      });
+      
+    } else {
+
+		//add new client
+		this.clientService.newClient(value);
+		this.flashMessagesService.show('New client added', {
+        cssClass:'success', timeout: 4000
+      });
+      this.router.navigate(['/']);
+		}
+ }
 
 }

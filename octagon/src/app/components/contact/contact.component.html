@@ -3,28 +3,67 @@
 <!--form method="post" name="myemailform" action="../scripts/form_to_email.php"-->
 <div class="container">
 <h3>CONTACT US</h3>
-<form #contactForm ="ngForm">
+<form #contactForm ="ngForm" method="post" name="myemailform" action="scripts/form_to_email.php">
 
       <div class="form-group">
         <label for="firstName">First Name</label>
-        <input type="text" class="form-control" id="firstName" required [(ngModel)]="model.firstName" name="firstName">
-
+        <input type="text" class="form-control" id="firstName" [(ngModel)]="model.firstName" name="firstName" [ngClass]="{'is-invalid':firstName.errors?.required && firstName.touched || firstName.errors?.minlength || firstName.errors?.pattern}"
+		#firstName = "ngModel"
+		minlength="2"
+		required
+		pattern="[a-zA-Z]+">
+		<div *ngIf="firstName.errors?.required && firstName.touched" class="invalid-feedback">First name is required
+		</div>
+		<div *ngIf="firstName.errors?.minlength && firstName.touched" class="invalid-feedback">Must be at least two characters
+		</div>
+		<div *ngIf="firstName.errors?.pattern && firstName.touched" class="invalid-feedback">Must be a valid first name
+		</div>
       </div>
  
       <div class="form-group">
         <label for="lastName">Last Name</label>
         <input type="text" class="form-control" id="lastName" required [(ngModel)]
-        ="model.lastName" name="lastName">
-      </div>
+	        ="model.lastName" name="lastName" [ngClass]="{'is-invalid':lastName.errors?.required && lastName.touched || lastName.errors?.minlength || lastName.errors?.pattern}"
+			#lastName = "ngModel"
+			minlength="2"
+			required
+			pattern="^[A-Za-zÀ-ÖØ-öø-ÿ '\-\.]{1,22}$">
+						
+		<div *ngIf="lastName.errors?.required && lastName.touched" class="invalid-feedback">Last name is required
+		</div>
+		<div *ngIf="lastName.errors?.minlength && lastName.touched" class="invalid-feedback">Must be at least two characters
+		</div>
+		<div *ngIf="lastName.errors?.pattern && lastName.touched" class="invalid-feedback">Must be a valid last name
+		</div>
+
+        </div>
 
        <div class="form-group">
         <label for="email">Email</label>
-        <input type="email" class="form-control" id="email" required [(ngModel)]="model.email" name="email">
+        <input type="email" class="form-control" id="email" required [(ngModel)]="model.email" name="email" [ngClass]="{'is-invalid':email.errors?.required && email.touched || email.errors?.minlength || email.errors?.pattern}"
+		#email = "ngModel"
+		minlength="2"
+		required
+		pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+		<div *ngIf="email.errors?.required && email.touched" class="invalid-feedback">Email is required
+		</div>
+		<div *ngIf="email.errors?.minlength && email.touched" class="invalid-feedback">Must be at least two characters
+		</div>
+		<div *ngIf="email.errors?.pattern && email.touched" class="invalid-feedback">Must be a valid email address
+		</div>
       </div>
 
        <div class="form-group">
         <label for="zipCode">Zip Code</label>
-        <input type="number" class="form-control" id="zipCode" required [(ngModel)]="model.zipCode" name="zipCode">
+        <input type="number" class="form-control" id="zipCode" required [(ngModel)]="model.zipCode" name="zipCode" 						[ngClass]="{'is-invalid':zipCode.errors?.required && zipCode.touched || zipCode.errors?.pattern}"
+						#zipCode = "ngModel"
+						required
+						pattern="^(\d{5}(-\d{4})?|[A-Z]\d[A-Z] *\d[A-Z]\d)$"
+						>
+						<div *ngIf="zipCode.errors?.required && zipCode.touched" class="invalid-feedback">Zip Code is required
+					</div>
+		<div *ngIf="zipCode.errors?.pattern && zipCode.touched" class="invalid-feedback">Must be a valid zip code 
+		</div>
       </div>
 
       <div class="form-group">
@@ -36,7 +75,7 @@
  
       <button type="submit" class="btn btn-success">Submit</button>
 
-	<input type="submit" value='send' />
+	
 
  </form>
 
